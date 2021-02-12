@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>A-Frame - Image Textures</title>
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+</head>
+
+<body>
+<a-scene antialias="true">
+	
+	<a-assets>
+		<img id="sky" src="images/stars1.jpg" crossorigin="anonymous" />
+		<img id="grass" src="images/grass.jpg" crossorigin="anonymous" />
+		<img id="brick" src="images/brick.jpg" crossorigin="anonymous" />
+		<img id="earth" src="images/earth-sphere.jpg" crossorigin="anonymous" />
+		<img id="hexagons" src="images/hexagons.png" crossorigin="anonymous" />
+		<img id="saturn" src="images/saturn.jpg" crossorigin="anonymous" />
+        <img id="jupiter" src="images/jupiter.jpeg" crossorigin="anonymous" />
+        
+	</a-assets>
+		
+	<a-sky 
+		color = "#FFFFFF"
+		material = "src: #sky">
+	</a-sky>
+
+	<a-plane
+		width="100" height="100"
+		position=" 0.00 0.00 0.00" 
+		rotation="-90 0 0" 
+		color="#888888" 
+		material="src: #grass; repeat:10 10; transparent: true; opacity: 0.75"
+		shadow="cast: false; receive: true">
+	</a-plane>
+	
+	<a-box
+		width = "1" height = "3" depth = "1"
+		position = "-3.8 1.5 -1"
+		rotation = "0 50 0"  
+		color = "#FFFFFF"
+		material = "src: #brick"
+		shadow = "cast: true; receive: true">
+	</a-box>
+    
+    <a-box
+		width = "1" height = "3" depth = "1"
+		position = "-2.1 1.5 -3"
+		rotation = "0 50 0"  
+		color = "#FFFFFF"
+		material = "src: #brick"
+		shadow = "cast: true; receive: true">
+	</a-box>
+        <a-box
+		width = "1" height = "5" depth = "1"
+		position = "-2.9 3.2 -2"
+		rotation = "0 50 90"  
+		color = "#FFFFFF"
+		material = "src: #brick"
+		shadow = "cast: true; receive: true">
+	</a-box>
+		<a-sphere
+		radius = "5"
+		position = "-15 20 -15"
+		material = "src: #jupiter;"
+		shadow = "cast: true; receive: true"
+        rotation="45 90 180"         >
+            
+	</a-sphere>
+	<a-sphere
+		radius = "1.25"
+		position = "5 7 -4"
+		material = "src: #earth;"
+		shadow = "cast: true; receive: true">
+	</a-sphere>
+    	<a-sphere
+		radius = ".8"
+		position = "4 7 -9"
+		material = "src: #saturn;"
+		shadow = "cast: true; receive: true">
+	</a-sphere>
+	
+	<a-cylinder
+		radius = "0.1" height = ".5"
+		position = " -1.8 1.5 -2.5"
+		color = "#8888BB"
+		material = "src: #hexagons; repeat: 4 2;"
+		shadow = "cast: true; receive: true">
+	</a-cylinder>
+    	<a-cylinder
+		radius = "0.1" height = ".5"
+		position = " -3.5 1.5 -.6"
+		color = "#8888BB"
+		material = "src: #hexagons; repeat: 4 2;"
+		shadow = "cast: true; receive: true">
+	</a-cylinder>
+	
+</a-scene>
+</body>
+</html>
