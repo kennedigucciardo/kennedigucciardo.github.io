@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> 360 </title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    
+</head>
+
+<body>
+<a-scene antialias="true">
+	
+	<a-assets>
+		<img id="sky" src="images/stars1.jpg" crossorigin="anonymous" />
+		
+		<img id="earth" src="images/earth-sphere.jpg" crossorigin="anonymous" />
+		<img id="saturn" src="images/saturn.jpg" crossorigin="anonymous" />
+        <img id="jupiter" src="images/jupiter.jpeg" crossorigin="anonymous" />
+        <img id="beach" src="images/beach.jpeg" crossorigin="anonymous" /> 
+        <img id="lake" src="images/lake.jpeg" crossorigin="anonymous" />
+        <img id="town" src="images/town.jpeg" crossorigin="anonymous" />
+	</a-assets>
+		
+	<a-sky 
+		color = "#FFFFFF"
+		material = "src: #sky">
+	</a-sky>
+
+	
+		<a-sphere
+		radius = "5"
+		position = "-15 20 -15"
+		material = "src: #jupiter;"
+		shadow = "cast: true; receive: true"
+        rotation="45 90 180" 
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #lake">
+            
+	</a-sphere>
+	<a-sphere
+		radius = "1.25"
+		position = "5 7 -4"
+		material = "src: #earth;"
+		shadow = "cast: true; receive: true"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #beach">
+	</a-sphere>
+    	<a-sphere
+		radius = ".8"
+		position = "4 7 -9"
+		material = "src: #saturn;"
+		shadow = "cast: true; receive: true"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #town"          >
+	</a-sphere>
+	 <a-camera>
+        <a-cursor></a-cursor>
+    </a-camera>
+</a-scene>
+</body>
+</html>
